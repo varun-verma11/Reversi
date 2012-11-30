@@ -11,7 +11,7 @@ public class HumanPlayer extends Player
 
 	@Override
 	public void getMove() {
-		
+		//check witb display
 	}
 
 }
