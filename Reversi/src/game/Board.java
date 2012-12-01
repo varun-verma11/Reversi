@@ -29,7 +29,7 @@ public class Board
 	}
 
 	public boolean isEmpty(int r, int c) {
-		return false;
+		return board[r][c] == null;
 	}
 	
 	public int getRows() {

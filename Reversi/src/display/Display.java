@@ -16,6 +16,10 @@ public interface Display
 	
 	public abstract int getMoveColumn(int min, int max);
 	
+	public abstract int getNumberOfPlayers();
+	
+	public abstract void printInvalidMove();
+	
 	public abstract void displayBoard(Board board);
 
 }

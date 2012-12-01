@@ -10,4 +10,11 @@ public abstract class Piece {
 		return colour;
 	}
 	
+	public void flip() {
+		if(colour==Colour.WHITE)
+			colour = Colour.BLACK;
+		else
+			colour = Colour.WHITE;
+	}
+	
 }
