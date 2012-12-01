@@ -28,16 +28,11 @@ public class Board
 		return board[r][c];
 	}
 
-<<<<<<< HEAD
-	public int getRows()
-	{
-=======
 	public boolean isEmpty(int r, int c) {
 		return false;
 	}
 	
 	public int getRows() {
->>>>>>> 772644f487319760b28a67192cf32c1ef384123c
 		return rows;
 	}
 

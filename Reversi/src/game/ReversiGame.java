@@ -31,14 +31,9 @@ public class ReversiGame extends Game {
 	}
 
 	@Override
-<<<<<<< HEAD
 	public void move(int r, int c)
 	{
-		// TODO Auto-generated method stub
-=======
-	public void move(int r, int c) {
 		
->>>>>>> 772644f487319760b28a67192cf32c1ef384123c
 		
 	}
 

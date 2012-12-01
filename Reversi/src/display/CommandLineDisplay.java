@@ -155,7 +155,7 @@ public class CommandLineDisplay implements Display
 		// System.out.println(colour);
 		Board board = new Board(10, 10);
 		Colour curr = Colour.BLACK;
-		for (int r = 0; r < board.getRows(); r++)
+		for (int r = 0; r < board.getRows(); r+=2)
 		{
 			for (int c = 0; c < board.getColumns(); c++)
 			{
