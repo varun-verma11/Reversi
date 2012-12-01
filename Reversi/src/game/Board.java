@@ -1,21 +1,30 @@
 package game;
 
-public class Board {
+public class Board
+{
 	private final int rows;
 	private final int columns;
 	private Piece[][] board;
 
-	public Board(int rows, int columns) {
+	public Piece[][] getBoard()
+	{
+		return board;
+	}
+
+	public Board(int rows, int columns)
+	{
 		this.rows = rows;
 		this.columns = columns;
 		board = new Piece[rows][columns];
 	}
 
-	public void setPiece(int r, int c, Piece piece) {
+	public void setPiece(int r, int c, Piece piece)
+	{
 		board[r][c] = piece;
 	}
 
-	public Piece getPiece(int r, int c) {
+	public Piece getPiece(int r, int c)
+	{
 		return board[r][c];
 	}
 
@@ -27,7 +36,8 @@ public class Board {
 		return rows;
 	}
 
-	public int getColumns() {
+	public int getColumns()
+	{
 		return columns;
 	}
 }
