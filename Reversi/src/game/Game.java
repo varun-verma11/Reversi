@@ -21,7 +21,7 @@ public abstract class Game {
 		}
 	}
 	
-	public abstract boolean isMoveValid(int r, int c);
+	public abstract boolean isMoveValid(int r, int c, boolean storeValidMoves);
 	public abstract void move(int r, int c);
 	
 	public Player getCurrentPlayer() {
