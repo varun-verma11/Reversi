@@ -1,15 +1,18 @@
 package player;
 
+import game.Board;
 import game.Colour;
 
 public abstract class Player
 {
-	private final String name;
-	private final Colour colour;
+	protected final String name;
+	protected final Colour colour;
+	protected final Board board;
 
-	public Player (String name, Colour colour) {
+	public Player (String name, Colour colour, Board board) {
 		this.name = name;
 		this.colour = colour;
+		this.board = board;
 	}
 
 	public String getName() {
@@ -20,5 +23,5 @@ public abstract class Player
 		return colour;
 	}
 	
-	public abstract void getMove() ;
+	public abstract int[] getMove() ;
 }
