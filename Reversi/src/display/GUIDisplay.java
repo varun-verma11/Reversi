@@ -82,4 +82,18 @@ public class GUIDisplay implements Display
 		return 0;
 	}
 
+	@Override
+	public int getNumberOfPlayers()
+	{
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void printInvalidMove()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
 }
