@@ -13,6 +13,7 @@ public abstract class Game {
 	{
 		this.board = new Board(rows, columns);
 		this.players = new Player[numberOfPlayers];
+		
 	}
 	
 	public abstract boolean isMoveValid(int r, int c, boolean storeValidMoves);

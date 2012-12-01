@@ -1,5 +1,7 @@
 package game;
 
+
+
 import player.HumanPlayer;
 import player.Player;
 import display.CommandLineDisplay;
@@ -14,6 +16,7 @@ public class ReversiGame extends Game {
 	int[] validMoves = new int[16];
 	public ReversiGame(int numberOfPlayers, int rows, int columns) {
 		super(numberOfPlayers, rows, columns);
+		
 	}
 
 	@Override
@@ -25,7 +28,7 @@ public class ReversiGame extends Game {
 		//Check for the north 
 		validMoves[0] = -1;
 		validMoves[1] = -1;
-		okN = r>0 && players[currentPlayerId].getColour()!= board.getPiece(r-1, c).getColour() && !board.isEmpty(r-1, c);
+		okN = r>0 && !board.isEmpty(r-1, c) && players[currentPlayerId].getColour()!= board.getPiece(r-1, c).getColour();
 		for(i=r-1;okN && i>=0 && !board.isEmpty(i, c); i--)
 			if(board.getPiece(i, c).getColour() != players[currentPlayerId].getColour())
 				if(storeValidMoves) {
@@ -38,7 +41,7 @@ public class ReversiGame extends Game {
 		validMoves[2] = -1;
 		validMoves[3] = -1;
 		//Check for the north-west
-		okNW = r>0 && c>0 && players[currentPlayerId].getColour()!= board.getPiece(r-1, c-1).getColour()&& !board.isEmpty(r-1, c-1);
+		okNW = r>0 && c>0 && !board.isEmpty(r-1, c-1) && players[currentPlayerId].getColour()!= board.getPiece(r-1, c-1).getColour();
 		for(i=1;okNW && !board.isEmpty(r-i, c-i); i++)
 			if(board.getPiece(r-i, c-i).getColour() != players[currentPlayerId].getColour())
 				if(storeValidMoves) {
@@ -53,7 +56,7 @@ public class ReversiGame extends Game {
 		validMoves[4] = -1;
 		validMoves[5] = -1;			
 		//Check for the west
-		okW = c>0 && players[currentPlayerId].getColour()!= board.getPiece(r, c-1).getColour();
+		okW = c>0 && !board.isEmpty(r-1, c-1) && players[currentPlayerId].getColour()!= board.getPiece(r, c-1).getColour();
 		for(i=c-1;okW && i>=0 && !board.isEmpty(r, i); i--)
 			if(board.getPiece(r, i).getColour() != players[currentPlayerId].getColour())
 				if(storeValidMoves) {
@@ -66,7 +69,7 @@ public class ReversiGame extends Game {
 		validMoves[6] = -1;
 		validMoves[7] = -1;
 		//Check for the south-west
-		okSW = c-1>0 && r+1<board.getRows() && players[currentPlayerId].getColour() != board.getPiece(r+1,c-1).getColour() && !board.isEmpty(r+1, c-1);
+		okSW = c-1>0 && r+1<board.getRows() && !board.isEmpty(r+1, c-1) && players[currentPlayerId].getColour() != board.getPiece(r+1,c-1).getColour() ;
 		for(i=1;okSW && !board.isEmpty(r+i, c-i); i++)
 			if(board.getPiece(r+i, c-i).getColour() != players[currentPlayerId].getColour())
 				if(storeValidMoves) {
@@ -81,7 +84,7 @@ public class ReversiGame extends Game {
 		validMoves[8] = -1;
 		validMoves[9] = -1;
 		//Check for the south
-		okS = r+1<board.getRows() && players[currentPlayerId].getColour() != board.getPiece(r+1, c).getColour() && !board.isEmpty(r+1, c);
+		okS = r+1<board.getRows() && !board.isEmpty(r+1, c) && players[currentPlayerId].getColour() != board.getPiece(r+1, c).getColour();
 		for(i=1;okS && i<r && !board.isEmpty(r+i, c); i++)
 			if(board.getPiece(r+i, c).getColour() != players[currentPlayerId].getColour())
 				if(storeValidMoves) {
@@ -94,7 +97,7 @@ public class ReversiGame extends Game {
 		validMoves[10] = -1;
 		validMoves[11] = -1;
 		//Check for the south-east
-		okSE = r+1<board.getRows() && c+1<board.getColumns() && players[currentPlayerId].getColour() != board.getPiece(r+1, c+1).getColour() && !board.isEmpty(r+1, c+1);
+		okSE = r+1<board.getRows() && c+1<board.getColumns() && !board.isEmpty(r+1, c+1) && players[currentPlayerId].getColour() != board.getPiece(r+1, c+1).getColour() ;
 		for(i=1;okSE && i<Math.min(r, c) && !board.isEmpty(r+i, c+i); i++)
 			if(board.getPiece(r+i, c+i).getColour() != players[currentPlayerId].getColour())
 				if(storeValidMoves) {
@@ -138,12 +141,12 @@ public class ReversiGame extends Game {
 	@Override
 	public void play() {
 		Display display = new CommandLineDisplay();
+		currentPlayerId = 0;
 		int numberOfPlayers = display.getNumberOfPlayers();
-		Player[] playersNames = new HumanPlayer[numberOfPlayers];
-		for (int i = 1; i <= numberOfPlayers; i++) {
+		for (int i = 0; i < numberOfPlayers; i++) {
 			String playerName = display.getPlayerName();
 			Colour playerColour = Colour.valueOf(display.getPlayerColour());
-			playersNames[i - 1] = new HumanPlayer(playerName, playerColour,board);
+			players[i] = new HumanPlayer(playerName, playerColour,board);
 		}
 
 		while (!isOver()) { 

@@ -112,14 +112,16 @@ public class CommandLineDisplay implements Display
 		{
 			if (input.charAt(input.length() - 1) >= 'a'
 					&& input.charAt(input.length() - 1) <= 'z'
-					&& Integer.parseInt(input.substring(0, input.length() - 1)) > 0)
+					|| Integer.parseInt(input.substring(0, input.length() )) > 0)
 			{
 				return true;
 			}
 		} catch (NumberFormatException e)
 		{
+			System.out.println("FALSE valid");
 			return false;
 		}
+		System.out.println("FALSE");
 		return false;
 	}
 
@@ -172,16 +174,8 @@ public class CommandLineDisplay implements Display
 		// System.out.println(colour);
 		Board board = new Board(10, 10);
 		Colour curr = Colour.BLACK;
-		for (int r = 0; r < board.getRows(); r += 2)
-		{
-			for (int c = 0; c < board.getColumns(); c++)
-			{
-				board.setPiece(r, c, new ReversiPiece(curr));
-				curr = (curr == Colour.BLACK) ? Colour.WHITE : Colour.BLACK;
-			}
-			curr = (curr == Colour.BLACK) ? Colour.WHITE : Colour.BLACK;
-		}
-		display.getNumberOfPlayers();
+
+//		display.getNumberOfPlayers();
 		display.displayBoard(board);
 	}
 
