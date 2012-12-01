@@ -19,6 +19,10 @@ public class Board {
 		return board[r][c];
 	}
 
+	public boolean isEmpty(int r, int c) {
+		return false;
+	}
+	
 	public int getRows() {
 		return rows;
 	}
