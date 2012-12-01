@@ -7,7 +7,7 @@ import display.Display;
 public abstract class Game {
 	protected Board board;
 	protected Player[] players;
-	protected int currentPlayer ;
+	protected int currentPlayerId ;
 	protected Display display;
 	
 	public Game(int numberOfPlayers, int rows, int columns)
@@ -25,12 +25,12 @@ public abstract class Game {
 	public abstract void move(int r, int c);
 	
 	public Player getCurrentPlayer() {
-		return players[currentPlayer];
+		return players[currentPlayerId];
 	}
 	
 	public void nextPlayer() {
-		currentPlayer++;
-		currentPlayer%=players.length;
+		currentPlayerId++;
+		currentPlayerId%=players.length;
 	}
 	
 	public abstract void play();
