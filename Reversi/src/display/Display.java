@@ -1,23 +1,21 @@
 package display;
 
 import game.Board;
+import player.Player;
 
-public class Display {
+public interface Display
+{
+
+	public abstract void printCurrentPlayerTurn(Player player);
+
+	public abstract String getPlayerName();
+
+	public abstract String getPlayerColour();
 	
-	public String getPlayerName()
-	{
-		return "";
-	}
+	public abstract int getMoveRow(int min, int max);
 	
-	public String getPlayerColour()
-	{
-		return null;
-	}
+	public abstract int getMoveColumn(int min, int max);
 	
-	public void displayCurrentBoard(Board board) 
-	{
-		
-	}
-	
-	
+	public abstract void displayBoard(Board board);
+
 }

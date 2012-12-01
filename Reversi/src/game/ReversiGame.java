@@ -16,4 +16,11 @@ public class ReversiGame extends Game {
 
 	}
 
+	@Override
+	public void move(int r, int c)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
 }
