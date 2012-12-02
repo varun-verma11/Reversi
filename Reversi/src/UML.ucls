@@ -40,8 +40,8 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="6" corner="BOTTOM_RIGHT" language="java" name="game.Piece" project="Reversi" 
-    file="/Reversi/src/game/Piece.java" binary="false">    
+  <class id="6" corner="BOTTOM_RIGHT" language="java" name="piece.Piece" project="Reversi" 
+    file="/Reversi/src/piece/Piece.java" binary="false">    
     <position height="-1" width="-1" x="80" y="654"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -56,8 +56,8 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="8" corner="BOTTOM_RIGHT" language="java" name="game.ReversiPiece" project="Reversi" 
-    file="/Reversi/src/game/ReversiPiece.java" binary="false">    
+  <class id="8" corner="BOTTOM_RIGHT" language="java" name="piece.ReversiPiece" project="Reversi" 
+    file="/Reversi/src/piece/ReversiPiece.java" binary="false">    
     <position height="-1" width="-1" x="169" y="68"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      

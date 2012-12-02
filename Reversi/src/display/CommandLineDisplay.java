@@ -2,11 +2,10 @@ package display;
 
 import game.Board;
 import game.Colour;
-import game.Piece;
-import game.ReversiPiece;
 
 import java.util.Scanner;
 
+import piece.Piece;
 import player.Player;
 
 public class CommandLineDisplay implements Display
@@ -159,20 +158,6 @@ public class CommandLineDisplay implements Display
 			System.out.println("|");
 		}
 		System.out.println(bottomAndTop + "_");
-	}
-
-	public static void main(String[] args)
-	{
-		Display display = new CommandLineDisplay();
-		// String name = display.getPlayerName();
-		// System.out.println(name);
-		// Colour colour = display.getPlayerColour();
-		// System.out.println(colour);
-		Board board = new Board(10, 10);
-		Colour curr = Colour.BLACK;
-
-//		display.getNumberOfPlayers();
-		display.displayBoard(board);
 	}
 
 	@Override

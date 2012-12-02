@@ -1,5 +1,6 @@
 package game;
 
+import piece.ReversiPiece;
 import player.HumanPlayer;
 import display.CommandLineDisplay;
 
@@ -352,6 +353,13 @@ public class ReversiGame extends Game {
 	public static void main(String[] args) {
 		Game game = new ReversiGame(2, 8, 8);
 		game.play();
+	}
+
+	@Override
+	public Board getBoard()
+	{
+		return board;
+		
 	}
 
 }

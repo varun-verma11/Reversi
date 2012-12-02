@@ -1,5 +1,7 @@
 package game;
 
+import piece.Piece;
+
 public class Board
 {
 	private final int rows;
