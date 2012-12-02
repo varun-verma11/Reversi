@@ -8,7 +8,7 @@ public abstract class Player
 	protected final String name;
 	protected final Colour colour;
 	protected final Board board;
-
+	public int score;
 	public Player (String name, Colour colour, Board board) {
 		this.name = name;
 		this.colour = colour;
@@ -23,5 +23,12 @@ public abstract class Player
 		return colour;
 	}
 	
+	public void addToScore(int add) {
+		score += add;
+	}
+	
+	public int getScore() {
+		return score;
+	}
 	public abstract int[] getMove() ;
 }
